@@ -6,7 +6,7 @@
 }
 
 .header {
-  height: 40vh;
+  height: 32vh;
   width: 100%;
   margin: 30px;
   text-align: center;
@@ -29,7 +29,10 @@
   height: 30vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 10px;
+  margin-bottom: 20px;
 
   &_input {
     width: 250px;
@@ -53,13 +56,19 @@
 }
 
 .characterList {
-  display: grid;
+  display: flex;
+  justify-content: space-around;
   width: 100%;
-  background-color: green;
 
   &_item {
+    width: 175px;
+    height: 250px;
+    padding: 20px;
+    margin-bottom: 50px;
+    background-color: goldenrod;
+
     &-picture {
-      width: 100px;
+      width: 175px;
     }
   }
 }

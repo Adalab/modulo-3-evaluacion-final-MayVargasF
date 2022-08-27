@@ -1,8 +1,18 @@
 import "../styles/App.scss";
 import logo from "../images/Harry-Potter-Logo.png";
 import picture from "../images/harry.jpg";
+import dataApi from "../services/fetch";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [dataCharacters, setDataCharcters] = useState([]);
+  useEffect(() => {
+    dataApi().then((data) => {
+      console.log(data);
+      setDataCharcters(data);
+    });
+  }, []);
+
   return (
     <div className="body">
       <header className="header">
@@ -29,42 +39,6 @@ function App() {
         </form>
         <section className="containerUl">
           <ul className="characterList">
-            <li className="characterList_item">
-              <img
-                className="characterList_item-picture"
-                src={picture}
-                alt="Character picture"
-              ></img>
-              <h1 className="characterList_item-name">Nombre personaje</h1>
-              <p className="characterList_item-specie">Especie</p>
-            </li>
-            <li className="characterList_item">
-              <img
-                className="characterList_item-picture"
-                src={picture}
-                alt="Character picture"
-              ></img>
-              <h1 className="characterList_item-name">Nombre personaje</h1>
-              <p className="characterList_item-specie">Especie</p>
-            </li>
-            <li className="characterList_item">
-              <img
-                className="characterList_item-picture"
-                src={picture}
-                alt="Character picture"
-              ></img>
-              <h1 className="characterList_item-name">Nombre personaje</h1>
-              <p className="characterList_item-specie">Especie</p>
-            </li>
-            <li className="characterList_item">
-              <img
-                className="characterList_item-picture"
-                src={picture}
-                alt="Character picture"
-              ></img>
-              <h1 className="characterList_item-name">Nombre personaje</h1>
-              <p className="characterList_item-specie">Especie</p>
-            </li>
             <li className="characterList_item">
               <img
                 className="characterList_item-picture"
