@@ -1,0 +1,35 @@
+.containerUl {
+  width: 100%;
+}
+
+.characterList {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  box-sizing: border-box;
+
+  &_item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 175px;
+    height: 250px;
+    padding: 20px;
+    margin-bottom: 50px;
+    background-color: goldenrod;
+
+    &-picture {
+      height: auto;
+      width: auto;
+      max-width: 200px;
+      max-height: 200px;
+      object-fit: contain;
+    }
+
+    &-name {
+      margin-top: 10px;
+    }
+  }
+}

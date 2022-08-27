@@ -1,8 +1,8 @@
 import "../styles/App.scss";
 import logo from "../images/Harry-Potter-Logo.png";
-import picture from "../images/harry.jpg";
 import dataApi from "../services/fetch";
 import { useEffect, useState } from "react";
+import CharacterList from "./CharacterList";
 
 function App() {
   const [dataCharacters, setDataCharcters] = useState([]);
@@ -37,19 +37,7 @@ function App() {
             <option value="all">Todos</option>
           </select>
         </form>
-        <section className="containerUl">
-          <ul className="characterList">
-            <li className="characterList_item">
-              <img
-                className="characterList_item-picture"
-                src={picture}
-                alt="Character picture"
-              ></img>
-              <h1 className="characterList_item-name">Nombre personaje</h1>
-              <p className="characterList_item-specie">Especie</p>
-            </li>
-          </ul>
-        </section>
+        <CharacterList characters={dataCharacters} />
       </main>
     </div>
   );

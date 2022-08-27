@@ -48,27 +48,3 @@
     color: goldenrod;
   }
 }
-
-//Characters Styles
-
-.containerUl {
-  width: 100%;
-}
-
-.characterList {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-
-  &_item {
-    width: 175px;
-    height: 250px;
-    padding: 20px;
-    margin-bottom: 50px;
-    background-color: goldenrod;
-
-    &-picture {
-      width: 175px;
-    }
-  }
-}
