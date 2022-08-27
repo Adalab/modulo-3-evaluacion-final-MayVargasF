@@ -1,0 +1,23 @@
+.form {
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+
+  &_input {
+    width: 250px;
+    height: 30px;
+    border-color: white;
+    background-color: black;
+    color: white;
+  }
+
+  &_label {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    font-size: 20px;
+    color: goldenrod;
+  }
+}

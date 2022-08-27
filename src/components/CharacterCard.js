@@ -1,15 +1,13 @@
-import picture from "../images/harry.jpg";
-
 function CharacterCard(props) {
   return (
-    <li className="characterList_item">
+    <li key={props.i} className="characterList_item">
       <img
         className="characterList_item-picture"
-        src={picture}
-        alt="Character"
+        src={props.character.image}
+        alt={props.character.name}
       ></img>
-      <h1 className="characterList_item-name">Nombre personaje</h1>
-      <p className="characterList_item-specie">Especie</p>
+      <h1 className="characterList_item-name">{props.character.name}</h1>
+      <p className="characterList_item-specie">{props.character.species}</p>
     </li>
   );
 }
