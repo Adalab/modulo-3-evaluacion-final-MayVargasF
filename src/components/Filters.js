@@ -5,7 +5,10 @@ import FilterByName from "./FilterByName";
 function Filters(props) {
   return (
     <form className="form">
-      <FilterByName />
+      <FilterByName
+        filterByName={props.filterByName}
+        handleFilterByName={props.handleFilterByName}
+      />
       <FilterByHouse
         filterByHouse={props.filterByHouse}
         handleFilterByHouse={props.handleFilterByHouse}

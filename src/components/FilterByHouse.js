@@ -25,5 +25,3 @@ function FilterByHouse(props) {
 }
 
 export default FilterByHouse;
-
-//Puedo hacer un map para pintar todos los option por casas, hacer primero eso.

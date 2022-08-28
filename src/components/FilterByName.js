@@ -1,4 +1,7 @@
 function FilterByName(props) {
+  const handleChange = (ev) => {
+    props.handleFilterByName(ev.target.value);
+  };
   return (
     <>
       <label htmlFor="searchCharacter" className="form_label">
@@ -10,6 +13,8 @@ function FilterByName(props) {
         name="searchCharacter"
         id="searchCharacter"
         placeholder="Ej. Harry Potter"
+        value={props.FilterByName}
+        onChange={handleChange}
       />
     </>
   );

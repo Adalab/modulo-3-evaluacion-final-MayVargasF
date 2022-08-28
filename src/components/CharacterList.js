@@ -2,12 +2,12 @@ import "../styles/components/characterList.scss";
 import CharacterCard from "./CharacterCard";
 
 function CharacterList(props) {
-  const userElements = props.characters.map((character, i) => {
-    return <CharacterCard character={character} i={i} />;
-  });
+  const characterElements = props.characters.map((character, i) => (
+    <CharacterCard character={character} key={i.toString()} />
+  ));
   return (
     <section className="containerUl">
-      <ul className="characterList">{userElements}</ul>
+      <ul className="characterList">{characterElements}</ul>
     </section>
   );
 }

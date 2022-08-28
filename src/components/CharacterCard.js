@@ -1,9 +1,14 @@
 function CharacterCard(props) {
+  function imagePlaceholder(element) {
+    return element === ""
+      ? "https://via.placeholder.com/210x295/ffffff/666666/?text=NotFound"
+      : element;
+  }
   return (
-    <li key={props.i} className="characterList_item">
+    <li className="characterList_item">
       <img
         className="characterList_item-picture"
-        src={props.character.image}
+        src={imagePlaceholder(props.character.image)}
         alt={props.character.name}
       ></img>
       <h1 className="characterList_item-name">{props.character.name}</h1>
