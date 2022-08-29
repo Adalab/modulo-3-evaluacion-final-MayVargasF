@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function CharacterCard(props) {
   function imagePlaceholder(element) {
     return element === ""
@@ -6,13 +8,15 @@ function CharacterCard(props) {
   }
   return (
     <li className="characterList_item">
-      <img
-        className="characterList_item-picture"
-        src={imagePlaceholder(props.character.image)}
-        alt={props.character.name}
-      ></img>
-      <h1 className="characterList_item-name">{props.character.name}</h1>
-      <p className="characterList_item-specie">{props.character.species}</p>
+      <Link to={`/character/${props.character.id}`}>
+        <img
+          className="characterList_item-picture"
+          src={imagePlaceholder(props.character.image)}
+          alt={props.character.name}
+        ></img>
+        <h1 className="characterList_item-name">{props.character.name}</h1>
+        <p className="characterList_item-specie">{props.character.species}</p>
+      </Link>
     </li>
   );
 }

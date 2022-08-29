@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import CharacterList from "./CharacterList";
 import Filters from "./Filters";
 import Header from "./Header";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, matchPath, useLocation } from "react-router-dom";
 import CharacterDetail from "./CharacterDetail";
 
 function App() {
@@ -41,15 +41,23 @@ function App() {
       return character.name.toLowerCase().includes(filterByName.toLowerCase());
     });
 
+  const { pathname } = useLocation();
+  const dataPath = matchPath("/character/:characterId", pathname);
+  console.log(dataPath);
+
+  const characterId = dataPath !== null ? dataPath.params.characterId : null;
+  const characterFound = dataCharacters.find((character) => {
+    return character.id === characterId;
+  });
+
   return (
     <div className="body">
+      <Header logo={logo} />
       <Routes>
         <Route
           path="/"
           element={
             <>
-              <Header logo={logo} />
-
               <main className="main">
                 <Filters
                   filterByHouse={filterByHouse}
@@ -64,11 +72,7 @@ function App() {
         />
         <Route
           path="/character/:characterId"
-          element={
-            <>
-              <Header logo={logo} /> <CharacterDetail />
-            </>
-          }
+          element={<CharacterDetail character={characterFound} />}
         />
       </Routes>
     </div>

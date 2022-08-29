@@ -1,5 +1,6 @@
 function FilterByName(props) {
   const handleChange = (ev) => {
+    ev.preventDefault();
     props.handleFilterByName(ev.target.value);
   };
   return (
