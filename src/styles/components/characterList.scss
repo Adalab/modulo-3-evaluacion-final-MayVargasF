@@ -9,6 +9,12 @@
   width: 100%;
   box-sizing: border-box;
 
+  &_item:hover {
+    background-color: black;
+    color: goldenrod;
+    border: 3px solid goldenrod;
+  }
+
   &_item {
     display: flex;
     flex-direction: column;
@@ -28,8 +34,15 @@
       object-fit: contain;
     }
 
-    &-name {
+    &-name,
+    &-specie {
       margin-top: 10px;
+      color: white;
+      text-decoration: none;
     }
   }
+}
+
+.link {
+  text-decoration: none;
 }

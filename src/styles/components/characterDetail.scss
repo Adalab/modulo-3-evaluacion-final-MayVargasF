@@ -1,0 +1,47 @@
+.characterDetail {
+  box-sizing: border-box;
+  width: 700px;
+  height: 55vh;
+  padding: 20px;
+  background-color: goldenrod;
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+  margin-bottom: 20px;
+  gap: 40px;
+  color: black;
+
+  &_picture {
+    height: auto;
+    width: auto;
+    max-width: 300px;
+    max-height: 300px;
+    object-fit: contain;
+  }
+
+  &_wrapper {
+    line-height: 30px;
+    font-size: 25px;
+
+    &-name {
+      color: white;
+      font-size: 30px;
+    }
+  }
+}
+
+.home {
+  text-decoration-line: none;
+  color: darkred;
+  font-size: 35px;
+  margin-left: 260px;
+  text-decoration: underline;
+}
+
+.home:hover {
+  font-size: 40px;
+}
+
+.label {
+  text-decoration: underline;
+}

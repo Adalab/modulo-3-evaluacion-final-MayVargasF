@@ -7,16 +7,17 @@ import Filters from "./Filters";
 import Header from "./Header";
 import { Route, Routes, matchPath, useLocation } from "react-router-dom";
 import CharacterDetail from "./CharacterDetail";
+import localStorage from "../services/localStorage";
 
 function App() {
-  const [dataCharacters, setDataCharcters] = useState([]);
+  const [dataCharacters, setDataCharacters] = useState([]);
   const [filterByHouse, SetFilterByHouse] = useState("all");
   const [filterByName, SetFilterByName] = useState("");
 
   useEffect(() => {
     dataApi().then((data) => {
-      console.log(data);
-      setDataCharcters(data);
+      setDataCharacters(data);
+      localStorage.set("localData", data);
     });
   }, []);
 
