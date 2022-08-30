@@ -4,8 +4,45 @@ import { Link } from "react-router-dom";
 
 function CharacterDetail(props) {
   function imagePlaceholder(element) {
-    return element === "" ? { NoImage } : element;
+    return element === "" ? NoImage : element;
   }
+
+  const alive = (info) => {
+    if (info) {
+      return (
+        <p className="characterDetail_info">
+          <span className="label">Status:</span> alive
+        </p>
+      );
+    } else {
+      return (
+        <p className="characterDetail_info">
+          <span className="label">Status:</span> dead
+        </p>
+      );
+    }
+  };
+
+  const alternateNames = (info) => {
+    if (info.length !== 0) {
+      return (
+        <p className="characterDetail_info">
+          <span className="label">Alternate names:</span>
+          {props.character.alternate_names}
+        </p>
+      );
+    }
+  };
+  const house = (info) => {
+    if (info.length !== 0) {
+      return (
+        <p className="characterDetail_info">
+          <span className="label">House:</span> {props.character.house}
+        </p>
+      );
+    }
+  };
+
   return (
     <>
       <section className="characterDetail">
@@ -18,24 +55,17 @@ function CharacterDetail(props) {
           <h1 className="characterDetail_wrapper-name">
             {props.character.name}
           </h1>
+          {alternateNames(props.character.alternate_names)}
+          {alive(props.character.alive)}
           <p className="characterDetail_info">
-            <span className="label">Nombres alternativos:</span>{" "}
-            {props.character.alternate_names}
+            <span className="label">Species:</span> {props.character.species}
           </p>
           <p className="characterDetail_info">
-            <span className="label">Estatus:</span> {props.character.alive}
+            <span className="label">Gender:</span> {props.character.gender}
           </p>
-          <p className="characterDetail_info">
-            <span className="label">Especie:</span> {props.character.species}
-          </p>
-          <p className="characterDetail_info">
-            <span className="label">Género:</span> {props.character.gender}
-          </p>
-          <p className="characterDetail_info">
-            <span className="label">Casa:</span> {props.character.house}
-          </p>
+          {house(props.character.house)}
           <Link to="/" className="home">
-            Volver
+            Back
           </Link>
         </div>
       </section>

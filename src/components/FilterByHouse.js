@@ -5,7 +5,7 @@ function FilterByHouse(props) {
   return (
     <>
       <label htmlFor="searchHouse" className="form_label">
-        Selecciona la casa:
+        Select the house:
       </label>
       <select
         name="searchHouse"
@@ -14,7 +14,7 @@ function FilterByHouse(props) {
         value={props.filterByHouse}
         onChange={handleChange}
       >
-        <option value="all">Todos</option>
+        <option value="all">All</option>
         <option value="Gryffindor">Gryffindor</option>
         <option value="Slytherin">Slytherin</option>
         <option value="Hufflepuff">Hufflepuff</option>

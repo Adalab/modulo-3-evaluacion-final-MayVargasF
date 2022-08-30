@@ -10,15 +10,19 @@ import CharacterDetail from "./CharacterDetail";
 import localStorage from "../services/localStorage";
 
 function App() {
-  const [dataCharacters, setDataCharacters] = useState([]);
+  const [dataCharacters, setDataCharacters] = useState(
+    localStorage.get("localData", [])
+  );
   const [filterByHouse, SetFilterByHouse] = useState("all");
   const [filterByName, SetFilterByName] = useState("");
 
   useEffect(() => {
-    dataApi().then((data) => {
-      setDataCharacters(data);
-      localStorage.set("localData", data);
-    });
+    if (dataCharacters.length === 0) {
+      dataApi().then((data) => {
+        setDataCharacters(data);
+        localStorage.set("localData", data);
+      });
+    }
   }, []);
 
   const handleFilterByHouse = (value) => {
@@ -44,7 +48,6 @@ function App() {
 
   const { pathname } = useLocation();
   const dataPath = matchPath("/character/:characterId", pathname);
-  console.log(dataPath);
 
   const characterId = dataPath !== null ? dataPath.params.characterId : null;
   const characterFound = dataCharacters.find((character) => {
@@ -66,7 +69,10 @@ function App() {
                   filterByName={filterByName}
                   handleFilterByName={handleFilterByName}
                 />
-                <CharacterList characters={characterFiltered} />
+                <CharacterList
+                  characters={characterFiltered}
+                  userSearch={filterByName}
+                />
               </main>
             </>
           }

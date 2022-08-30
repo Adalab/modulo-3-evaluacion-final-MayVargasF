@@ -1,5 +1,12 @@
 .containerUl {
   width: 100%;
+  min-height: 40vh;
+
+  &_msg {
+    margin-top: 60px;
+    text-align: center;
+    font-size: 20px;
+  }
 }
 
 .characterList {

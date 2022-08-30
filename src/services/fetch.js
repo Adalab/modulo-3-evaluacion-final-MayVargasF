@@ -16,7 +16,6 @@ const getDataApi = () => {
           alternate_names: character.alternate_names,
         };
       });
-      console.log(dataClean);
       return dataClean;
     });
 };
