@@ -23,6 +23,8 @@ function App() {
     localStorage.get("name", "")
   );
 
+  //Fetch and set in local storage if there's no data in local storage.
+
   useEffect(() => {
     if (dataCharacters.length === 0) {
       dataApi().then((data) => {
@@ -32,10 +34,14 @@ function App() {
     }
   }, []);
 
+  //Set user search in local storage.
+
   useEffect(() => {
     localStorage.set("name", filterByName);
     localStorage.set("house", filterByHouse);
   }, [filterByName, filterByHouse]);
+
+  //Set input values
 
   const handleFilterByHouse = (value) => {
     SetFilterByHouse(value);
@@ -44,6 +50,8 @@ function App() {
   const handleFilterByName = (value) => {
     SetFilterByName(value);
   };
+
+  // Filters
 
   const characterFiltered = dataCharacters
 
@@ -57,6 +65,8 @@ function App() {
     .filter((character) => {
       return character.name.toLowerCase().includes(filterByName.toLowerCase());
     });
+
+  // Dynamic routes for character detail
 
   const { pathname } = useLocation();
   const dataPath = matchPath("/character/:characterId", pathname);

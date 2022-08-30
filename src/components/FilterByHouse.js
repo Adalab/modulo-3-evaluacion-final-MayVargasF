@@ -3,7 +3,7 @@ function FilterByHouse(props) {
     props.handleFilterByHouse(ev.target.value);
   };
   return (
-    <div className="searchHouseWrapper">
+    <div>
       <label htmlFor="searchHouse" className="form_label">
         Select the house:
       </label>

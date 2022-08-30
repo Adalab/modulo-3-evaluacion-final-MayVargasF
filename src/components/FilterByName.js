@@ -4,6 +4,8 @@ function FilterByName(props) {
     props.handleFilterByName(ev.target.value);
   };
 
+  //Prevent default on press enter or num pad enter
+
   const handleSubmit = (ev) => {
     if (ev.code === "Enter" || ev.code === "NumpadEnter") {
       ev.preventDefault();
