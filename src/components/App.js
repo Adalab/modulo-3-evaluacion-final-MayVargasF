@@ -80,6 +80,8 @@ function App() {
                   handleFilterByHouse={handleFilterByHouse}
                   filterByName={filterByName}
                   handleFilterByName={handleFilterByName}
+                  SetFilterByHouse={SetFilterByHouse}
+                  SetFilterByName={SetFilterByName}
                 />
                 <CharacterList
                   characters={characterFiltered}

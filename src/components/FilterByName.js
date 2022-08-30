@@ -11,7 +11,7 @@ function FilterByName(props) {
   };
 
   return (
-    <>
+    <div className="searchCharacterWrapper">
       <label htmlFor="searchCharacter" className="form_label">
         Search by character:
       </label>
@@ -25,7 +25,7 @@ function FilterByName(props) {
         onChange={handleChange}
         onKeyPress={handleSubmit}
       />
-    </>
+    </div>
   );
 }
 

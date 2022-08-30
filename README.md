@@ -24,6 +24,8 @@
 
 5. Los personajes que no tienen una imagen muestran una imagen por defecto que informa de ello.
 
+6. Por último, al lado del formulario hay un botón de **reset** que borra los filtros seleccionados por la usuaria y vuelve a mostrar los personajes por defecto (los de la casa Griffindor).
+
 
 ### API externa utilizada para obtener la información de los personajes de Harry Potter.
 

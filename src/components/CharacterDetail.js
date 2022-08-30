@@ -11,13 +11,13 @@ function CharacterDetail(props) {
     if (info) {
       return (
         <p className="characterDetail_info">
-          <span className="label">Status:</span> alive
+          <span className="label">Status</span>: alive
         </p>
       );
     } else {
       return (
         <p className="characterDetail_info">
-          <span className="label">Status:</span> dead
+          <span className="label">Status</span>: dead
         </p>
       );
     }
@@ -27,7 +27,7 @@ function CharacterDetail(props) {
     if (info.length !== 0) {
       return (
         <p className="characterDetail_info">
-          <span className="label">Alternate names:</span>
+          <span className="label">Alternate names</span>:{" "}
           {props.character.alternate_names}
         </p>
       );
@@ -37,7 +37,7 @@ function CharacterDetail(props) {
     if (info.length !== 0) {
       return (
         <p className="characterDetail_info">
-          <span className="label">House:</span> {props.character.house}
+          <span className="label">House</span>: {props.character.house}
         </p>
       );
     }
@@ -58,10 +58,10 @@ function CharacterDetail(props) {
           {alternateNames(props.character.alternate_names)}
           {alive(props.character.alive)}
           <p className="characterDetail_info">
-            <span className="label">Species:</span> {props.character.species}
+            <span className="label">Species</span>: {props.character.species}
           </p>
           <p className="characterDetail_info">
-            <span className="label">Gender:</span> {props.character.gender}
+            <span className="label">Gender</span>: {props.character.gender}
           </p>
           {house(props.character.house)}
           <Link to="/" className="home">
