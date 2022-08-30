@@ -3,6 +3,13 @@ function FilterByName(props) {
     ev.preventDefault();
     props.handleFilterByName(ev.target.value);
   };
+
+  const handleSubmit = (ev) => {
+    if (ev.code === "Enter" || ev.code === "NumpadEnter") {
+      ev.preventDefault();
+    }
+  };
+
   return (
     <>
       <label htmlFor="searchCharacter" className="form_label">
@@ -14,8 +21,9 @@ function FilterByName(props) {
         name="searchCharacter"
         id="searchCharacter"
         placeholder="e.g., Harry Potter"
-        value={props.FilterByName}
+        value={props.filterByName}
         onChange={handleChange}
+        onKeyPress={handleSubmit}
       />
     </>
   );

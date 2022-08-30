@@ -1,20 +1,27 @@
 import "../styles/App.scss";
 import logo from "../images/Harry-Potter-Logo.png";
-import dataApi from "../services/fetch";
+
 import { useEffect, useState } from "react";
+import { Route, Routes, matchPath, useLocation } from "react-router-dom";
+
+import dataApi from "../services/fetch";
+import localStorage from "../services/localStorage";
+
 import CharacterList from "./CharacterList";
 import Filters from "./Filters";
 import Header from "./Header";
-import { Route, Routes, matchPath, useLocation } from "react-router-dom";
 import CharacterDetail from "./CharacterDetail";
-import localStorage from "../services/localStorage";
 
 function App() {
   const [dataCharacters, setDataCharacters] = useState(
     localStorage.get("localData", [])
   );
-  const [filterByHouse, SetFilterByHouse] = useState("all");
-  const [filterByName, SetFilterByName] = useState("");
+  const [filterByHouse, SetFilterByHouse] = useState(
+    localStorage.get("house", "Gryffindor")
+  );
+  const [filterByName, SetFilterByName] = useState(
+    localStorage.get("name", "")
+  );
 
   useEffect(() => {
     if (dataCharacters.length === 0) {
@@ -24,6 +31,11 @@ function App() {
       });
     }
   }, []);
+
+  useEffect(() => {
+    localStorage.set("name", filterByName);
+    localStorage.set("house", filterByHouse);
+  }, [filterByName, filterByHouse]);
 
   const handleFilterByHouse = (value) => {
     SetFilterByHouse(value);
